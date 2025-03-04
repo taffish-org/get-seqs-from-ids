@@ -1,0 +1,26 @@
+# <get-seqs-from-ids:1.0.0 | KaiyuanHan | 2024-03-04>
+### Optional ##############################################################################
+    <type>
+        # load & read, load can load files in memory then work, read can work with read line by line
+        # load may need more memory, read don't
+        read
+    <load>
+        ::*LOAD-DIR*::code/hanky-lisp/load-hanky-lisp.lisp
+    <script>
+        ::*LOAD-DIR*::code/::type::-lines.lisp
+    <opts>
+        ::seqs:: ::ids::
+    <out>
+        false
+    <cmd>
+        sbcl --load ::load::
+    <main>
+        if [ "::out::" = "false" ]; then ::cmd:: --script ::script:: ::opts:: ; else ::cmd:: --script ::script:: ::opts:: > ::out:: ; fi
+### NEED ##############################################################################
+    <seqs>
+        # seqs' fasta file
+    <ids>
+        # gene ID's file
+### RUN ##############################################################################
+    <container:taf-sbcl:docker.io/fukamachi/sbcl:2.5.0>
+        ::*MAIN*::

@@ -1,0 +1,9 @@
++FLOW:get-seqs-from-ids-test
+ARGS
+    <seqs>
+        ::*LOAD-DIR*::p450-db.fasta
+    <ids>
+        ::*LOAD-DIR*::p450-db.id
+RUN
+    <auto-flow>
+        taffish ::*LOAD-DIR*::../tafs/get-seqs-from-ids.taf --seqs ::seqs:: --ids ::ids::
