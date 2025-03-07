@@ -25,5 +25,5 @@ ARGS
     <ids>
         # gene ID's file
 RUN
-    <container:taf-sbcl-v2.5.0:docker.io/fukamachi/sbcl:2.5.0>
+    <container:taf-sbcl-v2.5.2:ghcr.io/taffish-org/sbcl:2.5.2>
         ::*MAIN*::
